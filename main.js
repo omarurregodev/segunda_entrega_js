@@ -32,8 +32,18 @@ function newUser() {
 					about: document.getElementById("about").value
 			}
 			userArray.push(user);
+			//graficar(userArray);
+
+
+			// AQUI TENGO QUE EXPORTAR LA INFO AL LOCAL STORAGE - Y DEBO DE ENVIAR ESE ARRAY A GRAFICAR
+			localStorage.setItem('usuarios', JSON.stringify(userArray));
+			userArray = localStorage.getItem('usuarios');
+			userArray = JSON.parse(userArray);
+
 			graficar(userArray);
-			//console.log(userArray);
+
+			console.log(userArray);
+			
 	}	
 }
 
