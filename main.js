@@ -111,5 +111,4 @@ function deleteUser(id){
 	userArray.splice(id,1);
 	localStorage.setItem('usuarios', JSON.stringify(userArray));
 	graficar(userArray);
-
 }
