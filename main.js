@@ -22,9 +22,9 @@ busquedaField.addEventListener("change", buscar);
 
 // AQUI ESTOY CARGANDO LA INFORMACION DEL LOCALSTORAGE EN EL ARRAY, DEBO DE HACER ESTO EN EL INICIO SIEMPRE
 
-window.addEventListener('DOMContentLoaded', test, false);
+window.addEventListener('DOMContentLoaded', onloadLocalstorage, false);
 
-function test() {
+function onloadLocalstorage() {
 	//alert('cargo');
 
 	if (localStorage.getItem('usuarios') == null) {
