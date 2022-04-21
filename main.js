@@ -4,6 +4,7 @@ var userArray = [];
 let btnAdd = document.getElementById("btnUserAdd");
 let btnFilter = document.getElementById("btnFilter");
 let busquedaField = document.getElementById("busqueda");
+let bodyOnload = document.getElementById("bodyOnload");
 
 //var graphicArray = [];
 
@@ -19,6 +20,23 @@ busquedaField.addEventListener("keypress", (event)=> {
 });
 busquedaField.addEventListener("change", buscar);
 
+// AQUI ESTOY CARGANDO LA INFORMACION DEL LOCALSTORAGE EN EL ARRAY, DEBO DE HACER ESTO EN EL INICIO SIEMPRE
+
+window.addEventListener('DOMContentLoaded', test, false);
+
+function test() {
+	//alert('cargo');
+
+	if (localStorage.getItem('usuarios') == null) {
+		userArray = [];
+	} else {
+		userArray = localStorage.getItem('usuarios');
+		userArray = JSON.parse(userArray);
+	
+		graficar(userArray);
+	}
+
+}
 
 function newUser() {
 
@@ -37,12 +55,12 @@ function newUser() {
 
 			// AQUI TENGO QUE EXPORTAR LA INFO AL LOCAL STORAGE - Y DEBO DE ENVIAR ESE ARRAY A GRAFICAR
 			localStorage.setItem('usuarios', JSON.stringify(userArray));
-			userArray = localStorage.getItem('usuarios');
-			userArray = JSON.parse(userArray);
+			//userArray = localStorage.getItem('usuarios');  ESTO ES INNECESARIO
+			//userArray = JSON.parse(userArray);  ESTO ES INNECESARIO
 
 			graficar(userArray);
 
-			console.log(userArray);
+			//console.log(userArray);
 			
 	}	
 }
