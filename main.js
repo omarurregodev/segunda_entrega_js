@@ -1,12 +1,12 @@
 
-var userArray = [];
+let userArray = [];
 
 let btnAdd = document.getElementById("btnUserAdd");
 let btnFilter = document.getElementById("btnFilter");
 let busquedaField = document.getElementById("busqueda");
 
 
-//var graphicArray = [];
+//let graphicArray = [];
 
 // AGREGO LOS LISTENERS DE LOS BOTONES
 btnAdd.addEventListener("click", newUser);
@@ -43,7 +43,7 @@ function newUser() {
 	if (document.getElementById("name").value == '' || document.getElementById("age").value == '' || document.getElementById("career").value == '' || document.getElementById("about").value == '') {
 		alert('Todos los campos deben de estar llenos');
 	} else {
-			var user = {
+			let user = {
 					name: document.getElementById("name").value,
 					age: document.getElementById("age").value,
 					career: document.getElementById("career").value,
@@ -67,7 +67,7 @@ function newUser() {
 
 function graficar(usuarios){
 
-	var html_perfil = document.getElementById("perfiles");
+	let html_perfil = document.getElementById("perfiles");
 			
 	//variable que guarda todo el html que quiero renderizar
 	perfil='';
